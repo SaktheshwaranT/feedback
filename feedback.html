@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('https://i.ibb.co/TgrbW7S/feedback.webp'); /* Background image link */
+            background-size: cover; /* Ensures the image covers the body */
+            background-position: center; /* Centers the image */
+            font-family: 'Arial', sans-serif; /* Font style */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .feedback-container {
+            background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+            border: 2px solid #e6ccb2; /* Soft yellow border */
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #b08968; /* Warm tan */
+        }
+
+        label {
+            font-size: 18px;
+            color: #3b2e2e; /* Dark brown for labels */
+            display: block;
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        .horizontal-options {
+            display: flex;
+            justify-content: center; /* Center options horizontally */
+            gap: 0.5rem;
+        }
+
+        input[type="text"], textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%; /* Full width inputs */
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #b08968; /* Earthy brown */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #9c6644; /* Muted brick red */
+        }
+
+        @media (max-width: 600px) {
+            .feedback-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <h2>Feedback Form</h2>
+        <form action="/submit_feedback" method="POST">
+            <label>Fill in our Feedback Form for review</label>
+            <label for="name">First name</label>
+            <input name="name" type="text" required />
+
+            <label for="rating">Rate us:</label>
+            <div class="horizontal-options">
+                <input type="radio" id="1" name="overall-rating" required value="1">
+                <label for="1">1</label>
+                <input type="radio" id="2" name="overall-rating" value="2">
+                <label for="2">2</label>
+                <input type="radio" id="3" name="overall-rating" value="3">
+                <label for="3">3</label>
+                <input type="radio" id="4" name="overall-rating" value="4">
+                <label for="4">4</label>
+                <input type="radio" id="5" name="overall-rating" value="5">
+                <label for="5">5</label>
+            </div>
+
+            <label for="food-quality">Food Quality:</label>
+            <div class="horizontal-options">
+                <input type="radio" id="food1" name="food-quality" required value="1">
+                <label for="food1">1</label>
+                <input type="radio" id="food2" name="food-quality" value="2">
+                <label for="food2">2</label>
+                <input type="radio" id="food3" name="food-quality" value="3">
+                <label for="food3">3</label>
+                <input type="radio" id="food4" name="food-quality" value="4">
+                <label for="food4">4</label>
+                <input type="radio" id="food5" name="food-quality" value="5">
+                <label for="food5">5</label>
+            </div>
+
+            <label for="service-offering">Service Offering:</label>
+            <div class="horizontal-options">
+                <input type="radio" id="service1" name="service-offering" required value="1">
+                <label for="service1">1</label>
+                <input type="radio" id="service2" name="service-offering" value="2">
+                <label for="service2">2</label>
+                <input type="radio" id="service3" name="service-offering" value="3">
+                <label for="service3">3</label>
+                <input type="radio" id="service4" name="service-offering" value="4">
+                <label for="service4">4</label>
+                <input type="radio" id="service5" name="service-offering" value="5">
+                <label for="service5">5</label>
+            </div>
+
+            <label for="cleanliness">Cleanliness:</label>
+            <div class="horizontal-options">
+                <input type="radio" id="cleanliness1" name="cleanliness" required value="1">
+                <label for="cleanliness1">1</label>
+                <input type="radio" id="cleanliness2" name="cleanliness" value="2">
+                <label for="cleanliness2">2</label>
+                <input type="radio" id="cleanliness3" name="cleanliness" value="3">
+                <label for="cleanliness3">3</label>
+                <input type="radio" id="cleanliness4" name="cleanliness" value="4">
+                <label for="cleanliness4">4</label>
+                <input type="radio" id="cleanliness5" name="cleanliness" value="5">
+                <label for="cleanliness5">5</label>
+            </div>
+
+            <label for="overall-impression">Overall Impression:</label>
+            <div class="horizontal-options">
+                <input type="radio" id="impression1" name="overall-impression" required value="1">
+                <label for="impression1">1</label>
+                <input type="radio" id="impression2" name="overall-impression" value="2">
+                <label for="impression2">2</label>
+                <input type="radio" id="impression3" name="overall-impression" value="3">
+                <label for="impression3">3</label>
+                <input type="radio" id="impression4" name="overall-impression" value="4">
+                <label for="impression4">4</label>
+                <input type="radio" id="impression5" name="overall-impression" value="5">
+                <label for="impression5">5</label>
+            </div>
+    
+            <label for="comments">Comments:</label><br>
+            <textarea name="comments" rows="4" cols="50" required></textarea><br><br>
+            <input type="submit" value="Submit Feedback">
+        </form>
+    </div>
+</body>
+</html>
